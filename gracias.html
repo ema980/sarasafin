@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./estilos.css">
+    <title>Tienda</title>
+</head>
+<body>
+    <header>
+        <nav class="naveg-artist">
+            <div class="bienvenida">
+                <!--<h2 id="top" style="font-size:50px;">Productos en existencia</h2>-->
+                <img class="logo logo2" src="./img/logo.jpeg">
+            </div>
+            <div class="logo-pestanas">
+                <ul class="naveg-artist-bar">
+                    <li><a href="./index .html">Inicio</a></li>
+                    <li><a href="./menu.html">Menú</a></li>
+                    <li><a href="./ubicacion.html">Ubicación</a></li>
+                    <li><a href="./recomend.html">Recomendaciones</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="main-gracias" style="position: relative; text-align: start;">
+        <h1 class="titulo-gracias" style="font-size: 140px; color:whitesmoke; height: 90px;">GRACIAS!!</h1>
+        <h2 id="mensaje" style="color:#fff; font-size: 100px;"></h2>
+    </main>
+    <footer class="footer-reserva">
+        <div class="pie-redes">
+            <i class="bi bi-facebook"> Facebook</i>
+            <i class="bi bi-instagram"> Instagram</i>
+            <i class="bi bi-twitter"> Twitter</i>
+        </div>
+        <div class="pie-boton">
+            <button><a href="#top" class="pie">Volver arriba</a></button>
+        </div>
+    </footer>
+    <script>
+        window.onload = function() {
+        // Obtener el valor del parámetro "nombre" de la URL
+        var urlParams = new URLSearchParams(window.location.search);
+        var nombre = urlParams.get('nombre');
+        // Mostrar el mensaje personalizado en la página de agradecimiento
+        var mensaje = document.getElementById("mensaje");
+        mensaje.textContent = nombre;
+    }
+    </script>
+</body>
+</html>

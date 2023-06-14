@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=>, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="./estilos.css">
+    <title>Tienda</title>
+</head>
+<body>
+    <header>
+        <nav class="naveg-artist">
+            <div class="bienvenida">
+                <!--<h2 id="top" style="font-size:50px;">Productos en existencia</h2>-->
+                <img class="logo logo2" src="./img/logo.jpeg">
+            </div>
+            <div class="logo-pestanas">
+                <ul class="naveg-artist-bar">
+                    <li><a href="./index .html">Inicio</a></li>
+                    <li><a href="./menu.html">Menú</a></li>
+                    <li><a href="./ubicacion.html">Ubicación</a></li>
+                    <li><a href="./recomend.html">Recomendaciones</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="main-reserva">
+        <section class="reserva-izq">
+            <div class="botones-reserva">
+                <button type="button" class="boton-horario" id="dia">Día</button><br>
+                <button type="button" class="boton-horario" id="noche">Noche</button><br>
+                <form action="./gracias.html" method="post" class="form-reserva">
+                    <label for="nombre" style="color:#fff;">Nombre</label>
+                    <input type="text" id="nombre" name="nombre" placeholder="Nombre" required />
+                    <input type="button" value="reservar" onclick="enviarFormulario()" required>
+                </form>
+            </div>
+        </section>
+        <section class="reserva-der">
+            <h1 class="titulo-reserva" style="text-align: center;">RESERVE SU MESA</h1>
+            <div class="barras" style="border: solid #fff 1px;">
+                <div class="barra">
+                    <p class="texto-barra">Barra 1</p>
+                </div>
+                <div class="barra">
+                    <p class="texto-barra">Barra 2</p>
+                </div>
+                <div class="barra">
+                    <p class="texto-barra">Barra 3</p>
+                </div>
+            </div><BR>
+            <div class="mesas" id="mesas">
+                <div class="mesa"><p class="texto-barra">Mesa 1</p></div>
+                <div class="mesa"><p class="texto-barra">Mesa 2</p></div>
+                <div class="mesa"><p class="texto-barra">Mesa 3</p></div>
+                <div class="mesa"><p class="texto-barra">Mesa 4</p></div>
+                <div class="mesa"><p class="texto-barra">Mesa 5</p></div>
+                <div class="mesa"><p class="texto-barra">Mesa 6</p></div>
+                <div class="mesa"><p class="texto-barra">Mesa 7</p></div>
+                <div class="mesa"><p class="texto-barra">Mesa 8</p></div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer-reserva">
+        <div class="pie-redes">
+            <i class="bi bi-facebook"> Facebook</i>
+            <i class="bi bi-instagram"> Instagram</i>
+            <i class="bi bi-twitter"> Twitter</i>
+        </div>
+        <div class="pie-boton">
+            <button><a href="#top" class="pie">Volver arriba</a></button>
+        </div>
+    </footer>
+    <script>
+        function Noche(){
+            let mesas = document.getElementById("mesas");
+            if(mesas){
+                mesas.style.background = "#880000";
+            }
+        }
+        const noche = document.getElementById("noche");
+        noche.addEventListener("click", Noche);
+
+        function Dia(){
+            let mesas2 = document.getElementById("mesas");
+            if(mesas2){
+                mesas2.style.background = "#000080";
+            }
+        }
+        const dia = document.getElementById("dia");
+        dia.addEventListener("click", Dia);
+
+        function enviarFormulario() {
+            var nombre = document.getElementById("nombre").value;
+            if(nombre.trim() !== ""){
+            // Redirigir a la página de agradecimiento pasando el nombre como parámetro en la URL
+            window.location.href = "./gracias.html?nombre=" + encodeURIComponent(nombre);
+            }
+        }
+    </script>
+</body>
+</html>

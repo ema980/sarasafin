@@ -1,0 +1,541 @@
+/*estilos heredados*/
+.hamb{
+    display: none;
+    cursor: pointer; 
+    color:#fff; 
+    font-size: 40px; 
+    position: relative;
+    top: 0,5rem;
+}
+.titulos{
+    color:#fff;
+}
+main{
+    position: absolute;
+    margin-left: 20rem;
+}
+button{
+  cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: #f1f1f1;
+}
+li{
+  list-style: none;
+  margin: 14px;
+}
+ul{
+  display: flex;
+}
+img{
+  border-radius: 15px;
+}
+i{
+  margin: 14px;
+  font-size: 45px;
+}
+p{
+  color:#fff;
+}
+.arriba{
+  position: relative;
+  width: 100%;
+  height: 40px;
+  background: #000;
+  border-radius: 5px;
+}
+.navegador{
+    font-size: 1.4rem;
+} /*REVISAR */
+.enlaces{
+    margin-left: 5.5rem;
+}
+.logo{
+    width: 15rem;
+    border-radius: 50%;
+}
+/* leer mas */
+form{
+  display: flex;
+  position: relative;
+  width: 100vh;
+  height: 80px;
+}
+.texto .oculto{
+  display: flex;
+  position: absolute;
+}
+#texto:checked + div > .oculto{
+  display:none;
+}
+/*MODAL*/
+#modal{
+    background: #00000099;
+    position:fixed;
+    top:-50vh;
+    left: 315px;
+    height: 50vh;
+    width: 50vw;
+    transition: all .5s;
+    border-radius: 10px;
+}
+#mostrar{
+    display: none;
+}
+#mostrar + label{
+    display: contents;
+    margin: auto;
+}
+#mostrar:checked ~ #modal{
+    top:0;
+}
+#cerrar{
+    display: none;
+}
+#cerrar + label{
+    position: absolute;
+    z-index: 100;
+    color:#fff;
+    width: 25px;
+    height: 25px;
+    transition: all .5s;
+    display: none;
+}
+.close{
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flow-root;
+    position: absolute;
+    top: 20px;
+}
+#mostrar:checked ~ #cerrar + label{
+    display:block;
+}
+#cerrar:checked + label{
+    display: none;
+}
+
+#cerrar:checked ~ #modal{
+    top: -50vh;
+}
+#modal p{
+    font-size: 1.5em;
+}
+/*desplegable*/
+.desplegable:hover .oculto{
+    display:flex;
+    position: fixed;
+    margin-top: -15px;
+    margin-left: 15px;
+    background: #888;
+    border-radius: 15px;
+    cursor: pointer;
+    color:#fff;
+}
+.oculto{
+    display:none;
+}
+/* Estilos generales */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #222;
+    font-family: cormorant;
+  }
+  
+  /* Estilos para el encabezado y la navegación */
+  
+  header {
+    display: flex;/*heredado*/
+    justify-content: center;
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo-pestanas {
+    display: flex;
+    align-items:flex-end;
+  }
+  
+  .navegador ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .navegador ul li {
+    margin-right: 10px;
+  }
+  
+  /* Estilos para el contenido principal */
+  
+  .titulos {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.5rem;
+  }
+  
+  .imagenes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .contenedor-imagen {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+  }
+  
+  .contenedor-descrip {
+    /*background-color: #f1f1f1;*/
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .imagen img {
+    width: 100%;
+  }
+  
+  /* Estilos para el pie de página */
+  
+  footer {
+    width: fit-content;
+    /*background-color: #333;*/
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  .pie-redes {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  /* Media queries */
+  
+  /* Tamaño pequeño */
+  @media screen and (max-width: 480px) {
+    header{
+        justify-content: flex-start;
+    }
+    .navegador{
+        display: none;
+    }
+    .naveg-artist-bar{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hamb{
+        display: flex;
+        cursor: pointer; 
+        color:#fff; 
+        font-size: 40px; 
+        position: relative;
+        top: 0,5rem;
+    }
+    main{
+        position: relative;
+        margin-left: 0;
+    }
+    footer{
+        margin-left: 3rem;
+    }
+    .titulos {
+      padding: 10px;
+    }
+  
+    .contenedor-imagen {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .pie-redes {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+        /* pagina de menú */
+    .imgagenes-platos{
+      flex-direction: column;
+    }
+    .main-ubicacion{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* Tamaño mediano */
+  @media screen and (min-width: 481px) and (max-width: 768px) {
+    header{
+        justify-content: flex-start;
+    }
+    .oculto{
+        margin-top: -20px;
+    }
+    .navegador{
+        display: none;
+    }
+    .naveg-artist-bar{
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .hamb{
+        display: flex;
+        cursor: pointer; 
+        color:#fff; 
+        font-size: 40px; 
+        position: relative;
+        top: 0,5rem;
+    }
+    main{
+        position: relative;
+        margin-left: 0;
+    }
+    footer{
+        margin-left: 5rem;
+    }
+    .titulos {
+      padding: 20px;
+    }
+  
+    .contenedor-imagen {
+      width: 50%;
+      max-width: 50%;
+    }
+    .main-ubicacion{
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
+  /* Tamaño grande */
+  @media screen and (min-width: 769px) {
+    .contenedor-imagen {
+      width: 33.33%;
+      max-width: 33.33%;
+    }
+  }
+/* pagina de menú */
+.logo2{
+  width: 8rem;
+  border-radius: 50%;
+}
+.naveg-artist{
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: column;
+}
+.naveg-artist-bar {
+  font-size: 20px;
+}
+.imagenes-platos{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 2fr));
+  margin: 1rem;
+  width: 100%;
+}
+.img-plato{
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  border-radius: 10px;
+}
+.menu-platos{
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  width: 80%;
+  height: 120px;
+}
+.menu-platos:hover .img-plato {
+  transform: scale(1.1);
+  border-radius: 4px;
+}
+.menu-platos p {
+  display: none;
+}
+
+.img-plato:hover + .menu-platos p {
+  display: block;
+}
+.ingredientes{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify;
+}
+.footer{
+  padding: 10px;
+  text-align: center;
+  margin-left:auto;
+  margin-right: auto;
+}
+.pie{
+  color:#222;
+}
+.pie-redes{
+  display: flex;
+  color:#fff;
+}
+.main{
+  position: relative;
+  display: flex;
+  margin: 0;
+  justify-content: center;
+}
+/* PÁGINA DE UBICACIÓN */
+.main-ubicacion{
+  height: 500px;
+  position: relative;
+  display: flex;
+  margin: 0;
+}
+.ubicacion{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 0;
+}
+.ubicacion-desc{
+  width: 50%;
+  display: flex;
+  color: #fff;
+  flex-direction: column;
+  align-items: center;
+}
+.footer-ubicacion{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+}
+iframe{
+  border-radius: 20px;
+  width: 90%;
+  height: auto;
+}
+/* RESERVAS */
+.form-reserva{
+  position: absolute;
+  top: 16rem;
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+}
+.main-reserva{
+  margin: 0;
+  width: 100%;
+  height: 500px;
+  position: relative;
+}
+.titulo-reserva{
+  color:#fff;
+}
+.botones-reserva{
+  display: flex;
+  flex-direction: column;
+}
+.reserva-izq{
+  height: 400px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width:50%;
+}
+.reserva-der{
+  margin:1%;
+  float:right;
+  width: 50%;
+}
+.barras{
+  display: flex;
+  justify-content: space-around;
+  background: #2255cc;
+}
+.barra{
+  margin: 3%;
+  color: #222;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+  border: solid #fff 1px;
+  border-radius: 50%;
+}
+.mesas{
+  border: solid #fff 1px;
+  border-radius: 10px;
+  background: #2255cc;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 250px;
+  align-items: center;
+}
+.mesa{
+  margin: 4% 0 0 4%;
+  width: 50px;
+  height: 50px;
+  color:#222;
+  border:solid #fff 1px;
+  border-radius: 15%;
+}
+.texto-barra{
+  color:#2255cc;
+}
+.boton-horario{
+  width: 250px;
+  height: 30px;
+}
+.footer-reserva{
+  width: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+/* RECOMENDACIONES */
+.logo-opinion{
+  width: 80px;
+  margin: 1%;
+}
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contenedor-recomend{
+  border-radius: 10px;
+  width: 80%;
+  background: #888;
+}
+.titulo-recomend{
+  text-align: center;
+  color:whitesmoke;
+}
+.main-recomend{
+  margin: 0;
+  position: relative;
+}
+.contenedor-img-nombre{
+  display: flex;
+  align-items: flex-end;
+}
